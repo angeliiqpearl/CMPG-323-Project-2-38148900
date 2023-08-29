@@ -1,18 +1,18 @@
 # CMPG-323-Project-2-38148900
 The aim of this project was to create a CRUD RESTful API for the EcoPower Logistics Company, to help in the storage of their basic logistics data. Numerous methods were created to enhance the API management functionalities. Below is an elaboration on the content of the API and how it could be used;
 
-### THE DATABASE
+## THE DATABASE
 The database we had to work with had four entities which were;
 - Customer
 - Product, 
 - Order 
 - OrderDetails 
 
-### THE API
+## THE API
 A controller for each entity was created to add functionality. The functionalities referred to include GET, GET by id, POST, PATCH and DELETE methods. 
-All the controllers had those functionalities in place and additional verification methods were added. 
+All the controllers have those functionalities in place and additional verification methods. If a user wants to update or delete a non-existent data entry, an exception will be thrown. 
 
-### What can you do with the API?
+## What can you do with the API?
 **Customer Controller**
 - Retrieve all customer details.
 - Retrieve customer details based on the user input for customer id.
