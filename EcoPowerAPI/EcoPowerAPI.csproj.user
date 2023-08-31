@@ -10,6 +10,6 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>EcoPowerAPI.Models.ProjectTwoDBContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
-    <NameOfLastUsedPublishProfile>C:\Users\Angel\source\repos\EcoPowerAPI\Properties\PublishProfiles\EcoPowerAPIv1 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\Angel\CMPG-323-Project-2-38148900\EcoPowerAPI\Properties\PublishProfiles\EcoPowerAPIv1 - Web Deploy1.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

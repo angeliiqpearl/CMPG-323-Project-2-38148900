@@ -6,10 +6,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EcoPowerAPI.Models;
-  
+using Microsoft.AspNetCore.Authorization;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace EcoPowerAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class OrdersController : ControllerBase
@@ -49,27 +52,31 @@ namespace EcoPowerAPI.Controllers
 
             return order;
         }
-
-        //ET: api/Orders/Customers/customerID
-        /*[HttpGet]
-        //[Route("[action]")]
-        [Route("api/Orders/CutomerId")]
-        public async Task<ActionResult<IEnumerable<Order>>> GetOrderbyCustomerID(short CustomerId)
+        // GET: api/Customers/{customerId}/Orders
+        [HttpGet("{customerId}/Orders")]
+        public async Task<ActionResult<IEnumerable<Order>>> GetCustomerOrders(short customerId)
         {
-            if (_context.Orders == null)
+            var customer = await _context.Customers.FindAsync(customerId);
+
+            if (customer == null)
             {
                 return NotFound();
             }
 
-            var listOrder = await _context.Orders.Where(_context.Customers,
-                orders => orders.CustomerId,
-                customers => customers.CustomerId).ToListAsync();
-             
+            var orders = await _context.Orders.Where(order => order.CustomerId == customerId).ToListAsync();
 
-            //Order order = await _context.Orders.Where(o => o.CustomerId == CustomerId).FirstOrDefaultAsync();
+            // Prevent circular references during JSON serialization
+            var serializerOptions = new JsonSerializerOptions
+            {
+                ReferenceHandler = ReferenceHandler.Preserve
+            };
 
-            return listOrder;
-        }*/
+            var serializedOrders = JsonSerializer.Serialize(orders, serializerOptions);
+
+            return Content(serializedOrders, "application/json");
+            
+        }
+        
 
         // PUT: api/Orders/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

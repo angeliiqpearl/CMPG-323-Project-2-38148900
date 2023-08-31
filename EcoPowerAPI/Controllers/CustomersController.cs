@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EcoPowerAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EcoPowerAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CustomersController : ControllerBase

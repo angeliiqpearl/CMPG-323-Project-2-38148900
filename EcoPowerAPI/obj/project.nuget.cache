@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7npkL1yRJrzlQOx2/s3h7He0iCgT2D5H7XQpRH6Sbx1Nf6Nh9TEfVc9XU65kWmcigZ52wbt5kxBm5Q1lWSaqrw==",
+  "dgSpecHash": "eYCxMGVuXT3UaGhdwHyK2YT42JbdF6Z3Tj+K+ydu0i0oLFQSymXr1pu2m9kAgURkhI/G3UTzr+lkfthETOOLsA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Angel\\source\\repos\\EcoPowerAPI\\EcoPowerAPI.csproj",
+  "projectFilePath": "C:\\Users\\Angel\\CMPG-323-Project-2-38148900\\EcoPowerAPI\\EcoPowerAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Angel\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Angel\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

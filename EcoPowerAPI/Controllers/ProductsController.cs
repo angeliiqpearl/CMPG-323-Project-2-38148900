@@ -6,9 +6,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EcoPowerAPI.Models;
-
+using Microsoft.AspNetCore.Authorization;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 namespace EcoPowerAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
@@ -47,6 +50,31 @@ namespace EcoPowerAPI.Controllers
             }
 
             return product;
+        }
+
+        // GET: api/Orders/{orderId}/Products
+        [HttpGet("{orderId}/Products")]
+        public async Task<ActionResult<IEnumerable<Product>>> GetOrderProducts(short orderId)
+        {
+            var order = await _context.Orders.Include(o => o.OrderDetails).ThenInclude(od => od.Product).FirstOrDefaultAsync(o => o.OrderId == orderId);
+
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            var products = order.OrderDetails.Select(od => od.Product).ToList();
+
+            // Create JsonSerializerOptions with a custom converter
+            var serializerOptions = new JsonSerializerOptions
+            {
+                ReferenceHandler = ReferenceHandler.Preserve,
+                
+            };
+
+            var serializedProducts = JsonSerializer.Serialize(products, serializerOptions);
+
+            return Content(serializedProducts, "application/json");
         }
 
         // PUT: api/Products/5
