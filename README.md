@@ -1,38 +1,39 @@
 # CMPG-323-Project-2-38148900
-The aim of this project was to create a CRUD RESTful API for the EcoPower Logistics Company, to help in the storage of their basic logistics data. Numerous methods were created to enhance the API management functionalities. Below is an elaboration on the content of the API and how it could be used;
+The objective of this project was to develop a CRUD RESTful API for the EcoPower Logistics Company, to assist in the storage of their fundamental logistics data. Numerous methods were created to enhance the API management functionalities. The following is an explanation of the API's content and how it can be used:
 
-## THE DATABASE
-The database we had to work with had four entities which were;
-- Customer
-- Product, 
-- Order 
-- OrderDetails 
+The database that we worked with had four entities: Customer, Product, Order, and OrderDetails. 
 
-## THE API
-A controller for each entity was created to add functionality. The functionalities referred to include GET, GET by id, POST, PATCH and DELETE methods. 
-All the controllers have those functionalities in place and additional verification methods. If a user wants to update or delete a non-existent data entry, an exception will be thrown. 
+## The API
+Functionality was added to each entity by creating a controller for each one. The functionalities included GET, GET by ID, POST, and DELETE methods. All controllers have these functionalities in place, as well as additional verification methods. If a user attempts to update or delete a nonexistent data entry, an exception will be thrown. Authentication was added to prevent unauthorized access to the API.
 
-## What can you do with the API?
-**Customer Controller**
-- Retrieve all customer details.
-- Retrieve customer details based on the user input for customer id.
-- Update existing data for customers.
-- Delete existing entries.
+## Get started with the API
+To run the app service in a browser, the user must append the path '/swagger' to the URL. Otherwise, the app service will not work.
 
-**Products Controller**
-- Retrieve all product details.
-- Retrieve product details based on user input for product id.
-- Update product details.
-- Delete existing product entries.
+**The following CRUD operations are supported for the Customer Controller:**
+- **GET** - Retrieve all customer details.
+- **GET by ID** - Retrieve customer details based on the user input for customer id.
+- **PUT** - Update existing data for customers.
+- **POST** - Insert new customer details.
+- **DELETE** - Delete existing entries.
 
-**Orders Controller**
-- Retrieve all orders.
-- Retrieve order details based on user input for order id.
-- Update order details.
-- Delete existing order entries.
+**The following CRUD operations are supported for the Products Controller:**
+- **GET** - Retrieve all product details.
+- **GET by ID** - Retrieve product details based on user input for product id.
+- **PUT** - Update product details.
+- **POST** - Insert new product details.
+- **DELETE** - Delete existing product entries.
 
-**Order Details Controller**
-- Retrieve all product details.
-- Retrieve order details based on user input for order detail id.
-- Update order details.
-- Delete existing order detail entries
+**The following CRUD operations are supported for the Orders Controller:**
+- **GET** - Retrieve all orders.
+- **GET by ID** - Retrieve order details based on user input for order id.
+- **PUT** - Update order details.
+- **POST** - Insert new orders.
+- **DELETE** - Delete existing order entries.
+
+**The following CRUD operations are supported for the Order Details Controller:**
+- **GET** - Retrieve all order details.
+- **GET by ID** - Retrieve order details based on user input for order detail id.
+- **PUT** - Update order details.
+- **POST** - Insert new order details.
+- **DELETE** - Delete existing order detail entries
+
