@@ -18,14 +18,14 @@ To run the app service in a browser, the user must append the path '/swagger' to
 
 **The following CRUD operations are supported for the Products Controller:**
 - **GET** - Retrieve all product details.
-- **GET by ID** - Retrieve product details based on user input for product id.
+- **GET by ID** - Retrieve product details based on user input for product id or order id.
 - **PUT** - Update product details.
 - **POST** - Insert new product details.
 - **DELETE** - Delete existing product entries.
 
 **The following CRUD operations are supported for the Orders Controller:**
 - **GET** - Retrieve all orders.
-- **GET by ID** - Retrieve order details based on user input for order id.
+- **GET by ID** - Retrieve order details based on user input for order id or customer id.
 - **PUT** - Update order details.
 - **POST** - Insert new orders.
 - **DELETE** - Delete existing order entries.
