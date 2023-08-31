@@ -8,6 +8,7 @@ Functionality was added to each entity by creating a controller for each one. Th
 
 ## Get started with the API
 To run the app service in a browser, the user must append the path '/swagger' to the URL. Otherwise, the app service will not work.
+Alternatively, the API can be accessed [here](https://ecopowerapiv1.azurewebsites.net/swagger).
 
 **The following CRUD operations are supported for the Customer Controller:**
 - **GET** - Retrieve all customer details.
